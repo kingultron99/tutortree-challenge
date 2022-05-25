@@ -1,0 +1,10 @@
+Tutortree Challenge:
+    setup:
+        ✔ Basic dependancies (React, Framer-Motion, Vite, Phosphor icons) @done(22-05-25 17:06)
+        ✔ Setup basic project structure @started(22-05-25 17:06) @done(22-05-25 17:41) @lasted(35m54s) 
+    Requirements:
+        The site should begin as an empty page except for a "create post" button and the page title
+        ☐ Ability to create posts with a specified username
+        ☐ Upvote/Downvote
+        ☐ Comments
+        ☐ Stick to the design!
