@@ -1,0 +1,47 @@
+// Import variables
+@use "../../colours" as *;
+
+// base navbar styling
+.navbar {
+    z-index: 99;
+    user-select: none;
+    top: 10px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    color: $text-on-surface-dark;
+
+    // style the navbar content container
+    .nav-content {
+        border-radius: 20px;
+        background: $surface-dark;
+        padding: 1rem 2rem;
+        width: 50%;
+        min-width: 800px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font: normal normal bold 35px/47px 'Open Sans';
+        box-shadow: $drop-shadow;
+
+        // style the "New Post" button
+        button {
+            color: $text-on-surface-dark;
+            font: normal normal bold 35px/47px 'Open Sans';
+            margin-left: auto;
+            width: 345px;
+            height: 86px;
+            border-radius: 50px;
+            background: none;
+            border: 3px solid $brand;
+            cursor: pointer;
+            transition: all .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+            &:hover {
+                background: $brand;
+            }
+        }
+    }
+}

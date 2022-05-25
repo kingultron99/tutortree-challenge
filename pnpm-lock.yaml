@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@types/react': ^18.0.0
@@ -13,7 +13,7 @@ specifiers:
   vite: ^2.9.9
 
 dependencies:
-  framer-motion: 6.3.3_react-dom@18.1.0+react@18.1.0
+  framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
   phosphor-react: 1.4.1_react@18.1.0
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
@@ -198,6 +198,8 @@ packages:
     resolution: {integrity: sha512-AqDccGC+m5O/iUStSJy3DGRIUFu7WbY/CppZYwrEUB4N0tZlnI8CSTsgL7v5fHVFmUbRv2sd+yy27o8Ydt4MGg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.18.0
     dev: true
 
   /@babel/plugin-syntax-jsx/7.17.12_@babel+core@7.18.0:
@@ -718,7 +720,7 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /framer-motion/6.3.3_react-dom@18.1.0+react@18.1.0:
+  /framer-motion/6.3.3_ef5jwxihqo6n7gxfmzogljlgcm:
     resolution: {integrity: sha512-wo0dCnoq5vn4L8YVOPO9W54dliH78vDaX0Lj+bSPUys6Nt5QaehrS3uaYa0q5eVeikUgtTjz070UhQ94thI5Sw==}
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0'

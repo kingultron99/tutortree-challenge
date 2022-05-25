@@ -1,0 +1,20 @@
+// Brand colours
+$brand: #7510F7;
+$brand-accent: #D5BDFD;
+
+// Content colours
+$white: #fff;
+$surface-light: #F7F7F7;
+$surface-dark: #141C3A;
+$text-on-surface-light: $surface-dark;
+$text-on-surface-dark: $white;
+$border: #707070;
+$shadow: #0000004D;
+
+// general presets
+$drop-shadow: 0 8px 8px $shadow;
+
+// post styling presets
+$post-user-font: normal normal 600 25px/34px 'Open Sans';
+$post-content-font: normal normal normal 20px/34px 'Open Sans';
+$post-button-font: normal normal bold 20px/27px 'Open Sans';

@@ -1,0 +1,12 @@
+@use "../../colours" as *;
+
+.footer {
+    background: $surface-dark;
+    color: $text-on-surface-dark;
+    padding: 1rem;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 20px;
+    box-shadow: $drop-shadow;
+}

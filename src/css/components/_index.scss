@@ -1,0 +1,6 @@
+// collect all style components to one file to be imported at 
+// the top level index.scss
+
+@forward "./header/header";
+@forward "./footer/footer";
+@forward "./forum/forum";

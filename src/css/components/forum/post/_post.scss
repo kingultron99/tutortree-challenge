@@ -1,0 +1,67 @@
+@import "../../../colours";
+
+.post {
+    padding: 2rem;
+    padding-bottom: 4rem;
+    background: $white;
+    box-shadow: $drop-shadow;
+    position: relative;
+
+    h3 {
+        font: $post-user-font;
+    }
+
+    p {
+        margin-top: 1rem;
+        font: $post-content-font;
+    }
+
+    .vote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: -3rem;
+        color: $white;
+        border-radius: 20px;
+        border: 3px solid $white;
+        top: 25%;
+        overflow: hidden;
+        
+        svg {
+            padding: .5rem;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background: $surface-dark;
+                stroke: $text-on-surface-light;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        padding: 1rem;
+        border: 3px solid $brand;
+        background: none;
+        border-radius: 40px;
+        width: 7rem;
+        color: $brand;
+        font: $post-button-font;
+        cursor: pointer;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            color: $white;
+            background-color: $brand;
+        }
+    }
+}
+
+.reply {
+    margin-top: 2rem;
+    margin-left: 10%;
+}

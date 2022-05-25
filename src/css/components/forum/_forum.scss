@@ -1,0 +1,21 @@
+@forward "./post/post";
+
+@use "../../colours" as *;
+
+section#forum {
+    width: 100vw;
+    // set the height to the full screen height minus half of the navbars height
+    height: calc(100vh - calc(134px / 2));
+    // set the margin to half the navbar height
+    margin-top: calc(134px / 2);
+    background-color: $brand;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+
+
+    .post-container {
+        padding-top: 5rem;
+        width: 40%;
+    }
+}

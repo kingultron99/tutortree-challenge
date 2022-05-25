@@ -5,6 +5,6 @@ Tutortree Challenge:
     Requirements:
         The site should begin as an empty page except for a "create post" button and the page title
         ☐ Ability to create posts with a specified username
-        ☐ Upvote/Downvote
+        ✔ Upvote/Downvote @done(22-05-25 23:58)
         ☐ Comments
         ☐ Stick to the design!
