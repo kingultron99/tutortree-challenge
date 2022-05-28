@@ -1,0 +1,39 @@
+@use "../../../colours" as *;
+
+.modalBackground {
+    z-index: 999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($surface-dark, 0.88);
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    background-color: $white;
+    width: 959px;
+    height: 699px;
+
+
+    .modalContent {
+        padding: 120px 155px 107px 155px;
+        display: flex;
+        flex-direction: column;
+
+        .modalButton {
+            cursor: pointer;
+            width: 299px;
+            height: 80px;
+            padding: 1rem;
+            color: $white;
+            background: $brand;
+            border-radius: 50px;
+            border: 3px solid $brand;
+            font: $modal-button-font;
+        }
+    }
+}

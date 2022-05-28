@@ -5,12 +5,12 @@ import { post } from "../../types/types"
  * contains the page title and ability to make a new post
  */
 
-export default function Header() {
+export default function Header(props: {setShowModalState: React.Dispatch<React.SetStateAction<boolean>>}) {
     return(
         <nav className="navbar">
             <div className="nav-content">
                 <h1>Maths For 'em</h1>
-                <button>New Post</button>
+                <button onClick={() => props.setShowModalState(true)}>New Post</button>
             </div>
         </nav>
     )

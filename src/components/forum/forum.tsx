@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { post } from "../../types/types"
 import Post from "./posts/post";
 
-export default function Forum(props: { posts: post[] }) {
+export default function Forum(props: { posts: post[], setShowReplyModal: React.Dispatch<React.SetStateAction<boolean>> }) {
 
       
 
@@ -14,7 +14,7 @@ export default function Forum(props: { posts: post[] }) {
                 {props.posts != [] ? 
                     props.posts.map((post, key) => {
                         return(
-                            <Post key={key} keynum={key} post={post}/>
+                            <Post key={key} keynum={key} post={post} showReplyModal={props.setShowReplyModal}/>
                         )
                     })
                  : <p>No posts yet</p>}

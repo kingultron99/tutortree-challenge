@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react'
+import { post } from '../types/types'
 import Footer from './footer/footer'
 import Forum from './forum/forum'
 import Header from './header/header'
-import { post } from '../types/types'
+import PostModal from './modals/postModal'
+import ReplyModal from './modals/replyModal'
 
 
 function App() {
   const [posts, setPosts] = useState<post[]>([])
 
   /*
-   * the following states feels super redundant and can probably be setup way more effectively.
-   * its enough for this usage.
+   * the following states feel super redundant and can probably be setup way more effectively.
+   * though it should be enough for this usage.
    */
 
   // Sets whether the modal to create a post should be shown
@@ -22,32 +24,13 @@ function App() {
     setPosts([...posts, { username: i.username, content: i.content, votes: 0, replies: i.replies }])
   }
 
-  useEffect(() => addPost({
-    username: "yeet!",
-    content: "test post with reply!",
-    votes: 0,
-    replies: [
-      { username: "someone", content: "woo!", votes: 0, replies: [] },
-      {
-        username: "someone2", content: "woo!!", votes: 0, replies: [
-          {
-            username: "more replies!",
-            content: "Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow’s nest nipperkin grog yardarm hempen halter furl. Swab barque interloper .",
-            votes: 0,
-            replies: []
-          }
-        ]
-      }
-    ]
-  }), [])
-
   console.log(posts)
   return (
     <div>
-      {showPostModal ? <PostModal /> : null}
-      {showReplyModal ? <ReplyModal /> : null}
-      <Header />
-      <Forum posts={posts} />
+      {showPostModal ? <PostModal addPost={addPost} showModal={showPostModal} setModalState={setShowPostModal}/> : null}
+      {showReplyModal ? <ReplyModal showModal={showReplyModal} setModalState={setShowReplyModal}/> : null}
+      <Header setShowModalState={setShowPostModal}/>
+      <Forum posts={posts} setShowReplyModal={setShowReplyModal}/>
       <Footer />
     </div>
   )

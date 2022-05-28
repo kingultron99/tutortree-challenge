@@ -7,7 +7,7 @@ import { post } from "../../../types/types";
  * Post defines the 
  * @param props all props passed by the parent element
  */
-export default function Post(props: { post: post, keynum: number }) {
+export default function Post(props: { post: post, keynum: number, showReplyModal: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [counter, setCounter] = useState<number>(props.post.votes)
     return (
         <div>
@@ -19,7 +19,7 @@ export default function Post(props: { post: post, keynum: number }) {
                 </div>
                 <h3>{props.post.username}</h3>
                 <p>{props.post.content}</p>
-                <button>Reply</button>
+                <button onClick={() => props.showReplyModal(true)}>Reply</button>
             </div>
 
             {/* The following acts as an iterator of sorts. 
@@ -29,10 +29,11 @@ export default function Post(props: { post: post, keynum: number }) {
               * Nesting is technically infinite here, however,
               * due to some of my current limitations with styling
               * (and how this is set up), there will reach a point 
-              * where the element will be way too small (each reply 
-              * is 10% smaller than the parent). I *could* set a 
-              * minimum width, however that would create confusion 
-              * for nested replies after a certain point.
+              * where the element will be way too small for practical 
+              * use (each reply is 10% smaller than the parent). 
+              * 
+              * I *could* set a minimum width, however that would create 
+              * confusion for nested replies after a certain point.
               * 
               * additionaly, this implementation has a few drawbacks.
               * it will be difficult to say, limit the number of replies
@@ -52,7 +53,7 @@ export default function Post(props: { post: post, keynum: number }) {
                         props.post.replies.map((reply, key) => {
                             var key = Number.parseInt(`${props.keynum}${key}`)
                             return (
-                                <Post keynum={key} key={key} post={reply} />
+                                <Post keynum={key} key={key} post={reply} showReplyModal={props.showReplyModal}/>
                             )
                         })
                     }
