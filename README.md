@@ -9,5 +9,5 @@ A live build of the page can be found at [https://kingultron99.github.io/tutortr
 |  Framer-Motion |               animations and effects               |
 |     React      |               Requirement for project              |
 |      SCSS      |                      Styling                       |
-| Phosphor-Icons |    used for the up/down caret in the vote caster   |
+| Phosphor-Icons |    used for various icons placed around the page   |
 |    gh-pages    |               publish to github pages              |
