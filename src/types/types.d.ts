@@ -14,6 +14,7 @@ export type post = {
  */
 
 export type ModalProps = {
+    setModal: () => void,
     buttonTitle: string,
     buttonClick: () => void,
     children: any[]

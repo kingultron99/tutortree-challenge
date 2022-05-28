@@ -1,14 +1,42 @@
+import { motion } from "framer-motion"
+import { X } from "phosphor-react"
 import { ModalProps } from "../../types/types"
 
-export default function ModalBase({ buttonTitle, buttonClick, children }: ModalProps) {
+export default function ModalBase({ setModal, buttonTitle, buttonClick, children }: ModalProps) {
+
+    const modal = {
+        init: {
+            opacity: 0,
+        },
+        anim: {
+            opacity: 1,
+            transition: {
+                staggerChildren: .1,
+            }
+        },
+        exit: {
+            opacity: 0
+        }
+    }
+
+    const component = {
+        init: {
+            opacity: 0,
+        },
+        anim: {
+            opacity: 1,
+        }
+    }
+
     return (
-        <div className="modalBackground">
+        <motion.div variants={modal} initial="init" animate="anim" exit="exit" className="modalBackground">
             <div className="modal">
-                <div className="modalContent">
+                <motion.div variants={modal} initial="init" animate="anim" className="modalContent">
+                    <div className="close" onClick={() => setModal()}><X/></div>
                     {children}
-                    <button className="modalButton" onClick={buttonClick}>{buttonTitle}</button>
-                </div>
+                    <motion.button variants={component} whileHover={{scale: 1.05}} whileTap={{scale:0.95}} className="modalButton" onClick={buttonClick}>{buttonTitle}</motion.button>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }

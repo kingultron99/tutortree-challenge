@@ -6,10 +6,11 @@
 section#forum {
     width: 100vw;
     // set the height to the full screen height minus half of the navbars height
-    height: calc(100vh - calc(134px / 2));
+    height: calc(100vh - calc(180px / 2) - 4rem);
     // set the margin to half the navbar height
-    margin-top: calc(134px / 2);
+    margin-top: calc(180px / 2);
     background-color: $brand;
+    padding-top: 4rem;
     display: flex;
     justify-content: center;
     overflow-y: scroll;
@@ -17,6 +18,6 @@ section#forum {
 
     .post-container {
         padding-top: 5rem;
-        width: 40%;
+        width: 80%;
     }
 }

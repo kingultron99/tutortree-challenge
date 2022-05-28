@@ -15,16 +15,91 @@
 
 .modal {
     background-color: $white;
+    position: relative;
     width: 959px;
     height: 699px;
+    box-shadow: $drop-shadow;
 
 
     .modalContent {
-        padding: 120px 155px 107px 155px;
+        padding: 10% 155px 107px 155px;
         display: flex;
         flex-direction: column;
 
+        .close {
+            cursor: pointer;
+            transition: all .2s ease;
+            padding: .5rem;
+            border-radius: 50px;
+            width: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1rem;
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+
+            svg line {
+                stroke-width: 2rem;
+                transition: all .2s ease;
+
+            }
+
+            &:hover {
+                background: #ec6a6a8a;
+
+                svg line {
+                    stroke: $white;
+                }
+            }
+        }
+
+        .error {
+            position: absolute;
+            bottom: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: #ec6a6a8a;
+            color: #ff0000;
+            width: 656px;
+            ;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        input {
+            margin-top: 2rem;
+            width: calc(650px - 4rem);
+            height: calc(80px - 2rem);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+        }
+
+        textarea {
+            max-width: calc(650px - 4rem);
+            min-width: calc(650px - 4rem);
+            max-height: 236px;
+            min-height: 236px;
+            border-radius: 50px;
+            padding: 2rem 2rem;
+            resize: none;
+        }
+
+        input,
+        textarea {
+            outline: none;
+            border: 3px solid $brand;
+            font: $post-user-font;
+            transition: all .2s ease;
+
+            &:focus {
+                box-shadow: $drop-shadow;
+            }
+        }
+
         .modalButton {
+            margin-top: 1rem;
             cursor: pointer;
             width: 299px;
             height: 80px;
