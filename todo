@@ -4,7 +4,7 @@ Tutortree Challenge:
         ✔ Setup basic project structure @started(22-05-25 17:06) @done(22-05-25 17:41) @lasted(35m54s) 
     Requirements:
         The site should begin as an empty page except for a "create post" button and the page title
-        ☐ Ability to create posts with a specified username
+        ✔ Ability to create posts with a specified username @done(22-05-28 13:15)
         ✔ Upvote/Downvote @done(22-05-25 23:58)
         ☐ Comments
         ☐ Stick to the design!
