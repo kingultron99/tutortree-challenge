@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import { CaretDown, CaretUp } from "phosphor-react";
 import { useEffect, useState } from "react";
-import { post } from "../../../types/types";
+import { PostProps, ReplyProps } from "../../../types/types";
 
 
 /**
- * Post defines the post element
- * @param props all props passed by the parent element
+ * Post defines the post element used for displaying top level posts
  */
-export default function Post(props: { post: post, replyPostID: React.Dispatch<React.SetStateAction<post | null>>, keynum: number, showReplyModal: React.Dispatch<React.SetStateAction<boolean>> }) {
-    const [counter, setCounter] = useState<number>(props.post.votes)
+export default function Post({ post, replyPostID, keynum, showReplyModal}: PostProps) {
+    const [counter, setCounter] = useState<number>(post.votes)
     const postvariants = {
         init: {
             opacity: 0,
@@ -22,17 +21,17 @@ export default function Post(props: { post: post, replyPostID: React.Dispatch<Re
     }
     return (
         <div>
-            <motion.div variants={postvariants} initial="init" animate="anim" className="post">
+            <motion.div key={keynum} variants={postvariants} initial="init" animate="anim" className="post">
                 <div className="vote">
                     <CaretUp onClick={() => setCounter(counter + 1)} />
                     {counter}
                     <CaretDown onClick={() => setCounter(counter - 1)} />
                 </div>
-                <h3>{props.post.username}</h3>
-                <p>{props.post.content}</p>
+                <h3>{post.username}</h3>
+                <p>{post.content}</p>
                 <motion.button whileTap={{scale: 0.95}} onClick={() => {
-                    props.replyPostID(props.post)
-                    props.showReplyModal(true)
+                    replyPostID(post)
+                    showReplyModal(true)
                     }}>Reply</motion.button>
             </motion.div>
 
@@ -61,13 +60,13 @@ export default function Post(props: { post: post, replyPostID: React.Dispatch<Re
             {/* The "reply" div will and its contents will only be created
               * if there are replies present on the post.
               */}
-            {props.post.replies != [] ? (
+            {post.replies != [] ? (
                 <div className="reply">
                     {
-                        props.post.replies.map((reply, key) => {
-                            var key = Number.parseInt(`${props.keynum}${key}`)
+                        post.replies.map((reply, key) => {
+                            var key = Number.parseInt(`${keynum}${key}`)
                             return (
-                                <Reply keynum={key} key={key} post={reply} parent={props.post} replyPostID={props.replyPostID} showReplyModal={props.showReplyModal} />
+                                <Reply keynum={key} key={key} post={reply} parent={post} replyPostID={replyPostID} showReplyModal={showReplyModal} />
                             )
                         })
                     }
@@ -90,8 +89,14 @@ export default function Post(props: { post: post, replyPostID: React.Dispatch<Re
  * thus I separated them to keep things easier to manage.
  */
 
-function Reply(props: { post: post, parent: post, replyPostID: React.Dispatch<React.SetStateAction<post | null>>, keynum: number, showReplyModal: React.Dispatch<React.SetStateAction<boolean>> }) {
-    const [counter, setCounter] = useState<number>(props.post.votes)
+
+
+/**
+ * Defines all posts/comments that exist under a top level post
+ */
+
+function Reply({ post, parent, replyPostID, keynum, showReplyModal }: ReplyProps) {
+    const [counter, setCounter] = useState<number>(post.votes)
 
     const postvariants = {
         init: {
@@ -105,17 +110,17 @@ function Reply(props: { post: post, parent: post, replyPostID: React.Dispatch<Re
     }
 
     return (
-            <motion.div variants={postvariants} initial="init" animate="anim" className="post">
+            <motion.div key={keynum} variants={postvariants} initial="init" animate="anim" className="post">
                 <div className="vote">
                     <CaretUp onClick={() => setCounter(counter + 1)} />
                     {counter}
                     <CaretDown onClick={() => setCounter(counter - 1)} />
                 </div>
-                <h3>{props.post.username}</h3>
-                <p>{props.post.content}</p>
+                <h3>{post.username}</h3>
+                <p>{post.content}</p>
                 <button onClick={() => {
-                    props.replyPostID(props.parent)
-                    props.showReplyModal(true)
+                    replyPostID(parent)
+                    showReplyModal(true)
                     }}>Reply</button>
             </motion.div>
     )

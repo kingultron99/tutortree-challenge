@@ -2,6 +2,11 @@ import { motion } from "framer-motion"
 import { X } from "phosphor-react"
 import { ModalProps } from "../../types/types"
 
+
+/**
+ * ModalBase defines the base element that is shared by all the modals.
+ * It includes a button who's onClick event handler is provided by the parent.
+ */
 export default function ModalBase({ setModal, buttonTitle, buttonClick, children }: ModalProps) {
 
     const modal = {

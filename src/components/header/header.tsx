@@ -1,5 +1,3 @@
-import { post } from "../../types/types"
-
 /**
  * Defines the header of the forum.
  * contains the page title and ability to make a new post

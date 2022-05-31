@@ -8,7 +8,6 @@
     box-shadow: $drop-shadow;
     position: relative;
     overflow-wrap: break-word;
-
     h3 {
         font: $post-user-font;
     }
@@ -19,6 +18,7 @@
         
     }
 
+    //vote container
     .vote {
         display: flex;
         flex-direction: column;
@@ -34,6 +34,7 @@
         font: $vote-font;
         overflow: hidden;
 
+        // vote container up/down svgs
         svg {
             padding: .5rem 1rem;
             transition: all .2s ease-in-out;
@@ -49,6 +50,8 @@
         }
     }
 
+
+    //reply button
     button {
         position: absolute;
         right: 1rem;
@@ -70,6 +73,8 @@
     }
 }
 
+// not to be confused with the reply button
+// this is for the container that houses all the reply posts
 .reply {
     margin-top: 2rem;
     margin-left: 5%;

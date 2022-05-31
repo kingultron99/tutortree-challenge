@@ -1,5 +1,6 @@
 /**
  * Defines the footer of the forum.
+ *  
  * this simply just adds a message stating who it was made by. 
  */
 

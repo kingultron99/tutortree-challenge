@@ -1,7 +1,10 @@
-import { AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { post } from "../../types/types"
 import ModalBase from "./base"
+
+/**
+ * Defines the modal used for replying to posts
+ */
 
 export default function ReplyModal(props: {addReply: (i: post) => void,showModal: boolean, setModalState: React.Dispatch<React.SetStateAction<boolean>>}) {
     const [username, setUsername] = useState("")
