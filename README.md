@@ -1,11 +1,9 @@
 # TutorTree Application Challenge
 ### Thanks for reviewing!
 
-## Task:
-Build a simple forum page within a design guidline.
+## Task: Build a simple forum page within a design guidline.
 
 ## Criteria:
-The page should:
  - Be blank on startup (except for the title and create post button)
  - Provide a modal for creating or replying to posts
  - Allow users to upvote / downvote
